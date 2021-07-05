@@ -18,6 +18,7 @@ from django.urls import path
 from API import views
 
 urlpatterns = [
+    #Main Url
     path('admin/', admin.site.urls),
     path('api/feed', views.FeedList.as_view()),
     path('api/userfeed',views.UserFeedList.as_view()),
