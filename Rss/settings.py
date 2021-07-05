@@ -79,7 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Rss.wsgi.application'
 
-
+#my app
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
