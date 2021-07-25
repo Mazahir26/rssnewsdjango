@@ -16,7 +16,7 @@ class FeedList(generics.ListCreateAPIView):
     serializer_class = FeedSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     def get_queryset(self):
-        return Feed.objects.all()
+        return Feed.objects.all().order_by("name")
 
     def perform_create(self, serializer):
         obj = serializer.save()
