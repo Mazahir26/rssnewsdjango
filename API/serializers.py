@@ -17,7 +17,7 @@ class FeedSubscriber(serializers.ModelSerializer):
 class URLSerializers(serializers.ModelSerializer):
     class Meta:
          model = SavedURL
-         fields = ["id","url"]
+         fields = ["id","url","updated_at"]
 
 class URLRemoveSerializers(serializers.ModelSerializer):
     class Meta:

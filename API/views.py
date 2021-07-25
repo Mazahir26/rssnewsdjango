@@ -77,7 +77,7 @@ class SaveURL(generics.ListCreateAPIView):
     serializer_class = URLSerializers
     permission_classes = [permissions.IsAuthenticated]
     def get_queryset(self):
-        return SavedURL.objects.filter(Users = self.request.user)
+        return SavedURL.objects.filter(Users = self.request.user).order_by("-updated_at")
     def perform_create(self, serializer):
         data = self.request.data
         temp = SavedURL.objects.filter(url = data['url']) 
@@ -92,10 +92,6 @@ class SaveURL(generics.ListCreateAPIView):
             else:
                 raise ParseError(detail="Saved Duplication")
 
-
-
-        
-        
 
 
 @csrf_exempt

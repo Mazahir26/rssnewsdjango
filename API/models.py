@@ -15,6 +15,7 @@ class Feed(models.Model):
 class SavedURL(models.Model):
     url = models.URLField(null=False)
     Users = models.ManyToManyField(User)
+    updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.url
 
