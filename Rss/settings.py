@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'n#l*har^#pd^5efedvb0uhd6(sy7img_z&0-%7*742kcb#8)be'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['boiling-harbor-01362.herokuapp.com/']
+ALLOWED_HOSTS = []
 
 
 # Application definition
