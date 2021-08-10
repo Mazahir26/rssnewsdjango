@@ -4,11 +4,16 @@ from django.db.models.deletion import CASCADE
 
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=50,null=False,unique=True)
+    def __str__(self):
+        return self.name
+
 class Feed(models.Model):
     name = models.CharField(max_length=50,null=False,unique=True)
     feed = models.URLField(unique=True,null=False)
-    Users = models.ManyToManyField(User)
-    Category = models.CharField(max_length=30,default="General")
+    users = models.ManyToManyField(User)
+    category = models.ForeignKey(Category, on_delete = CASCADE)
     def __str__(self):
         return self.name
 
